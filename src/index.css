@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: Outfit;
+}
+#root {
+  min-height: 100vh;
+  display: flex;
+  animation: fadeIn 1.2s;
+}
+@layer components {
+  .sidebar img {
+    @apply w-5;
+  }
+  .recent-entry {
+    @apply flex items-center gap-2.5 pr-10 p-2.5 rounded-[50px] text-[#282828] cursor-pointer;
+  }
+
+  .bottom-item {
+    @apply pr-2.5 cursor-pointer;
+  }
+
+  .recent-entry:hover {
+    @apply bg-[#e2e6eb];
+  }
+
+  .card {
+    @apply h-[200px] p-[15px] bg-[#f0f4f9] rounded-[10px] relative cursor-pointer;
+  }
+
+  .main .card > img {
+    @apply w-[35px] p-[5px] absolute bg-white rounded-[20px] bottom-2.5 right-2.5;
+  }
+}
+.main .main-container span {
+  background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.main .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.result::-webkit-scrollbar{
+  display: none;
+}
+
+.anim{
+  animation: loader 4s infinite linear;
+}
+@keyframes loader {
+  0% {
+    background-position: -800px 0px;
+
+  }
+  100% {
+    background-position: 800px 0px;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
